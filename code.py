@@ -97,6 +97,7 @@ while True:
 	time.sleep(10)
 	microcontroller.watchdog.feed()
 
+	# noinspection PyTypeChecker
 	if time.monotonic() - start >= os.getenv("REFRESH_INTERVAL_SECONDS"):
 		print("Wait time expired, refreshing...")
 		last_etag = refresh(last_etag)
